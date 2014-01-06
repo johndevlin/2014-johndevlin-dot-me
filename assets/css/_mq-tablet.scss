@@ -1,0 +1,15 @@
+
+@include media($tablet) {
+	
+	div#main {
+	
+		article {
+			@include span-columns(6);
+		}
+
+		aside {
+			@include span-columns(6);
+		}
+	
+	}
+}

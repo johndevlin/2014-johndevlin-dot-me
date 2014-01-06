@@ -1,0 +1,74 @@
+
+header {
+	padding: 40px 20px 0;
+	
+	.hgroup {
+		@include span-columns(3);
+		
+		h1 {
+			@include proxima-nova-black;
+			font-size: 5em;
+			letter-spacing: 0.075em;
+			line-height: 1;
+			margin: 0 0 0px;
+			text-transform: uppercase;
+		}
+		
+		h2 {
+			@include proxima-nova-bold;
+			font-size: 2em;
+			letter-spacing: 0.075em;
+			line-height: 1;
+			margin: 0;
+			text-transform: uppercase;
+		}
+	}
+	
+	.shit-bio {
+		@include span-columns(4);
+		
+		p {
+			font-size: 1.25em;
+			line-height: 1.5;
+			margin: 25px 0 -2px;
+		}
+	}
+	
+	nav {
+		@include span-columns(8);
+		@include shift(1);
+		@include clearfix;
+		
+		ul {
+			border-bottom: 1px solid #dddddd;
+			float: right;
+			margin: 81px 0 0;
+			padding-bottom: 10px;
+			
+			li {
+				@include inline-block;
+				color: $light-grey;
+				font-size: 0.875em;
+				margin-left: 13px;
+				text-transform: uppercase;
+				
+				&:first-child {
+					margin-left: 0px;
+				}
+			}
+			
+			a {
+				border-bottom: 1px solid transparent;
+				color: $grey;
+				padding-bottom: 9px; 
+			}
+			
+			.active a,
+			a:hover {
+				border-bottom: 1px solid $base-colour;
+				color: $base-colour;
+			}
+		}
+	}
+}
+

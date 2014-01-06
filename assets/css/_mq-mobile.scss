@@ -1,0 +1,24 @@
+
+@include media($mobile) {
+	
+	body {
+		-webkit-text-size-adjust: none;
+	}
+	
+	.mobile {
+		display: block;
+	}
+
+	.desktop {
+		display: none;
+	}
+	
+	div#main {
+	
+		article,
+		aside {
+			@include span-columns(1);
+		}
+	
+	}
+}
