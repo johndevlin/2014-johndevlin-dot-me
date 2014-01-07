@@ -13,12 +13,11 @@
 		display: none;
 	}
 	
-	div#main {
+	header {
+		padding-top: 10px;
 	
-		article,
-		aside {
-			@include span-columns(1);
+		nav {
+			display: none;
 		}
-	
 	}
 }

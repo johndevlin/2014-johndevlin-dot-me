@@ -145,10 +145,14 @@ body {
 }
 
 a {
-	border-bottom: 1px solid $base-colour;;
+	border-bottom: 1px solid $base-colour-hover;
 	color: $base-colour;
 	text-decoration: none;
 	@include transition (all 0.3s ease-in-out);
+	
+	&:hover {
+		border-bottom-color: $base-colour;
+	}
 }
 
 
@@ -159,6 +163,9 @@ a {
 
 @import "typography";
 
+#mti_wfs_colophon {
+	display: none !important;
+}
 
 
 .container {
@@ -256,7 +263,7 @@ img {
 */
 
 .button {
-	@include proxima-nova-regular;
+	@include din-regular;
 	background: transparent;
 	color: $base-colour;
 	cursor: pointer;
@@ -270,38 +277,15 @@ img {
 		border: 1px solid $base-colour;
 		color: $base-colour;
 		display: block;
-		padding: 13px;
+		padding: 13px 13px 12px;
 	
 		&:hover,
 		&:focus {
-			border: 1px solid $grey;
-			color: $grey;
+			border: 1px solid $base-colour-hover;
 		}
 	}
 }
 
-
-
-
-/*********
-	Icons
-*/
-
-@font-face {
-    font-family: 'Icons';
-    src: url('/assets/typography/icons.eot');
-    src: url('/assets/typography/iconseot?#iefix') format('embedded-opentype'),
-         url('/assets/typography/icons.woff') format('woff'),
-         url('/assets/typography/icons.woff') format('truetype'),
-         url('/assets/typography/icons.ttf#Icons') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-a.icons:before {
-	content: attr(data-icon);
-	font-family: 'Icons';
-}
 
 
 	

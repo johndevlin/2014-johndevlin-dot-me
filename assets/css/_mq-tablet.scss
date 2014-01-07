@@ -1,15 +1,47 @@
 
 @include media($tablet) {
 	
+	header {
+	
+		.hgroup {
+			@include span-columns(8);
+		
+			h1 {
+				font-size: 5em;
+			}
+		
+			h2 {
+				font-size: 2em;
+			}
+		}
+	
+		.shit-bio {
+			@include span-columns(8);
+		}
+	
+		nav {
+			@include span-columns(8);
+			@include shift(0);
+			@include clearfix;
+			
+			ul {
+				float: none; 
+			}
+		}
+	}
+	
 	div#main {
 	
-		article {
-			@include span-columns(6);
-		}
-
-		aside {
-			@include span-columns(6);
-		}
+		section {
 	
+			figure {
+				@include span-columns(8);
+			}
+
+			aside {
+				@include span-columns(8);
+				@include shift(0);
+			}
+		}
 	}
 }

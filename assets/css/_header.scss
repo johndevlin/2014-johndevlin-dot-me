@@ -6,7 +6,7 @@ header {
 		@include span-columns(3);
 		
 		h1 {
-			@include proxima-nova-black;
+			@include din-black;
 			font-size: 5em;
 			letter-spacing: 0.075em;
 			line-height: 1;
@@ -15,9 +15,9 @@ header {
 		}
 		
 		h2 {
-			@include proxima-nova-bold;
+			@include din-bold;
 			font-size: 2em;
-			letter-spacing: 0.075em;
+			letter-spacing: 0.025em;
 			line-height: 1;
 			margin: 0;
 			text-transform: uppercase;
@@ -28,9 +28,10 @@ header {
 		@include span-columns(4);
 		
 		p {
-			font-size: 1.25em;
-			line-height: 1.5;
-			margin: 25px 0 -2px;
+			font-size: 1.375em;
+			letter-spacing: -0.025em;
+			line-height: 1.4;
+			margin: 24px 0 -2px;
 		}
 	}
 	
@@ -42,7 +43,7 @@ header {
 		ul {
 			border-bottom: 1px solid #dddddd;
 			float: right;
-			margin: 81px 0 0;
+			margin: 78px 0 0;
 			padding-bottom: 10px;
 			
 			li {
@@ -55,6 +56,34 @@ header {
 				&:first-child {
 					margin-left: 0px;
 				}
+			}
+			
+			.blank-writing,
+			.blank-photography {
+				cursor: pointer;
+				position: relative;
+				
+				&:after {
+					@include transform(translateY(35px) rotateX(45deg));
+					@include transition (all 0.3s ease-in-out);
+					color: $base-colour;
+					content: 'Coming soon';
+					font-size: 0.75em;
+					margin: 0 auto;
+					opacity: 0;
+					position: absolute;
+					text-align: center;
+					width: 60px;
+				}
+				
+				&:hover:after {
+					@include transform(translateY(21px));
+					opacity: 1;
+				}
+			}
+			
+			.blank-photography:after {
+				left: 20px;
 			}
 			
 			a {

@@ -13,13 +13,14 @@ $grey: #444444;
 $orange: #ee8844;
 
 $base-colour: $orange;
+$base-colour-hover: lighten($base-colour, 20%);
 $body-colour: $grey;
 $background-colour: $white;
 
 
 /* Margins */
 
-$sitemargin: 50px;
+$sitemargin: 80px;
 
 
 /* Typography */
@@ -42,5 +43,39 @@ $proxima-nova: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, san-serif;
 	font-family: $proxima-nova;
 	font-weight: 900;
 }
+
+
+/* DIN */
+
+@mixin din-light {
+	font-family: 'DIN Next W01 Light', 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-weight: normal;
+}
+
+@mixin din-regular {
+	font-family: 'DIN Next W01 Regular', 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-weight: normal;
+}
+
+@mixin din-medium {
+	font-family: 'DIN Next W01 Medium', 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-weight: normal;
+}
+
+@mixin din-bold {
+	font-family: 'DIN Next W01 Bold', 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-weight: normal;
+}
+
+@mixin din-heavy {
+	font-family: 'DIN Next W01 Heavy', 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-weight: normal;
+}
+
+@mixin din-black {
+	font-family: 'DIN Next W01 Black', 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-weight: normal;
+}
+
 
 
