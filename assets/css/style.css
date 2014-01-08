@@ -261,7 +261,6 @@ td {
 /* Colours */
 /* Margins */
 /* Typography */
-/* Helvetica */
 /* DIN */
 ::-moz-selection {
   background: #ee8844;
@@ -286,12 +285,12 @@ body {
   margin: 0; }
 
 a {
-  border-bottom: 1px solid #f7c4a2;
-  color: #ee8844;
-  text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid #f7c4a2;
+  color: #ee8844;
+  text-decoration: none; }
   a:hover {
     border-bottom-color: #ee8844; }
 
@@ -311,7 +310,7 @@ p {
   font-weight: normal;
   color: #444444;
   font-size: 1.125em;
-  line-height: 1.333em;
+  line-height: 1.4em;
   margin: 0 0 1em; }
 
 p a {
@@ -327,10 +326,11 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility; }
 
 h1 {
-  font-family: 'DIN Next W01 Regular', 'Helvetica Neue', Helvetica, Arial, san-serif;
+  font-family: 'DIN Next W01 Medium', 'Helvetica Neue', Helvetica, Arial, san-serif;
   font-weight: normal;
   font-size: 2.25em;
-  letter-spacing: -0.025em; }
+  letter-spacing: -0.025em;
+  line-height: 1; }
 
 h2 {
   font-family: 'DIN Next W01 Medium', 'Helvetica Neue', Helvetica, Arial, san-serif;
@@ -339,7 +339,10 @@ h2 {
   letter-spacing: -0.025em; }
 
 #mti_wfs_colophon {
-  display: none !important; }
+  display: none !important;
+  height: 0px;
+  opacity: 0;
+  width: 0px; }
 
 .container {
   *zoom: 1;
@@ -438,7 +441,7 @@ header {
           -moz-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
           color: #ee8844;
-          content: 'Coming soon';
+          content: 'Not quite ready yet';
           font-size: 0.75em;
           margin: 0 auto;
           opacity: 0;
@@ -459,7 +462,10 @@ header {
         border-bottom: 1px solid transparent;
         color: #444444;
         padding-bottom: 9px; }
-      header nav ul .active a,
+      header nav ul .active a {
+        border-bottom: 1px solid #f7c4a2;
+        color: #ee8844; }
+      header nav ul .active a:hover,
       header nav ul a:hover {
         border-bottom: 1px solid #ee8844;
         color: #ee8844; }
@@ -468,12 +474,16 @@ header {
 	Main
 */
 div#main {
+  margin-bottom: 40px;
   padding: 80px 20px 0; }
   div#main section {
     *zoom: 1;
     max-width: 1140px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    border-top: 1px solid #dddddd;
+    padding-top: 40px;
+    margin-bottom: 40px; }
     div#main section:before, div#main section:after {
       content: " ";
       display: table; }
@@ -486,6 +496,15 @@ div#main {
       width: 61.8408%; }
       div#main section figure:last-child {
         margin-right: 0; }
+      div#main section figure figcaption {
+        display: none; }
+      div#main section figure img {
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #dddddd; }
+        div#main section figure img:hover {
+          border-color: #ee8844; }
     div#main section aside {
       display: block;
       float: left;
@@ -496,15 +515,22 @@ div#main {
         margin-right: 0; }
       div#main section aside .hgroup {
         margin-bottom: 30px; }
-        div#main section aside .hgroup h2,
-        div#main section aside .hgroup p {
-          margin: 0; }
-        div#main section aside .hgroup .small {
-          color: #aaaaaa;
-          font-size: 0.813em;
-          letter-spacing: 0.075em;
-          margin-bottom: 0px;
-          text-transform: uppercase; }
+    div#main section h2,
+    div#main section p {
+      margin: 0; }
+    div#main section .small {
+      color: #aaaaaa;
+      font-size: 0.813em;
+      letter-spacing: 0.075em;
+      margin-bottom: 0px;
+      text-transform: uppercase; }
+    div#main section:nth-child(odd) figure {
+      margin-left: 6.35987%;
+      float: right;
+      margin-right: 0; }
+    div#main section:nth-child(odd) aside {
+      margin-left: 0%;
+      float: left; }
 
 /**********
 	Footer
@@ -536,6 +562,9 @@ img {
 .stroked {
   text-decoration: line-through; }
 
+.hidden {
+  display: none; }
+
 /*****************
 	Button styles
 */
@@ -551,12 +580,12 @@ img {
   text-align: center;
   text-transform: uppercase; }
   .button a {
-    border: 1px solid #ee8844;
+    border: 1px solid #f7c4a2;
     color: #ee8844;
     display: block;
     padding: 13px 13px 12px; }
     .button a:hover, .button a:focus {
-      border: 1px solid #f7c4a2; }
+      border: 1px solid #ee8844; }
 
 /****************
 	Media Queries 
@@ -613,23 +642,40 @@ img {
     header nav:after {
       clear: both; }
     header nav ul {
-      float: none; }
+      float: none;
+      margin: 40px 0 0; }
 
-  div#main section figure {
-    display: block;
-    float: left;
-    margin-right: 3.57866%;
-    width: 100%; }
-    div#main section figure:last-child {
-      margin-right: 0; }
-  div#main section aside {
-    display: block;
-    float: left;
-    margin-right: 3.57866%;
-    width: 100%;
-    margin-left: 0%; }
-    div#main section aside:last-child {
-      margin-right: 0; } }
+  div#main {
+    padding-top: 40px; }
+    div#main section {
+      margin-top: 20px;
+      padding-top: 30px; }
+      div#main section figure {
+        display: block;
+        float: left;
+        margin-right: 3.57866%;
+        width: 100%;
+        margin-bottom: 20px; }
+        div#main section figure:last-child {
+          margin-right: 0; }
+        div#main section figure figcaption {
+          display: block;
+          margin-bottom: 20px; }
+          div#main section figure figcaption h2,
+          div#main section figure figcaption p {
+            margin: 0; }
+      div#main section aside {
+        display: block;
+        float: left;
+        margin-right: 3.57866%;
+        width: 100%;
+        margin-left: 0%; }
+        div#main section aside:last-child {
+          margin-right: 0; }
+        div#main section aside .hgroup {
+          margin-bottom: 20px; }
+          div#main section aside .hgroup:first-child {
+            display: none; } }
 /* Mobile (Landscape) */
 @media screen and (max-width: 767px) {
   body {
@@ -643,8 +689,21 @@ img {
 
   header {
     padding-top: 10px; }
+    header .hgroup {
+      margin-bottom: 10px; }
+    header .shit-bio p {
+      margin-top: 0; }
     header nav {
-      display: none; } }
+      display: none; }
+
+  div#main {
+    margin-bottom: 40px;
+    padding: 40px 20px 0; }
+    div#main h1 {
+      margin-bottom: 15px; }
+    div#main section {
+      padding-top: 20px;
+      margin-bottom: 20px; } }
 /***********
 	Helpers
 */

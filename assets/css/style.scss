@@ -145,10 +145,10 @@ body {
 }
 
 a {
+	@include transition (all 0.3s ease-in-out);
 	border-bottom: 1px solid $base-colour-hover;
 	color: $base-colour;
 	text-decoration: none;
-	@include transition (all 0.3s ease-in-out);
 	
 	&:hover {
 		border-bottom-color: $base-colour;
@@ -165,6 +165,9 @@ a {
 
 #mti_wfs_colophon {
 	display: none !important;
+	height: 0px;
+	opacity: 0;
+	width: 0px;
 }
 
 
@@ -186,13 +189,30 @@ a {
 */
 
 div#main {
+	margin-bottom: 40px;
 	padding: 80px 20px 0;
 	
 	section {	
 		@include outer-container;
+		border-top: 1px solid #dddddd;
+		padding-top: 40px;
+		margin-bottom: 40px;
 	
 		figure {
 			@include span-columns(10);
+			
+			figcaption {
+				display: none;
+			}
+			
+			img {
+				@include transition (all 0.3s ease-in-out);
+				border: 1px solid #dddddd;
+				
+				&:hover {
+					border-color: $base-colour;
+				}
+			}
 		}
 
 		aside {
@@ -201,19 +221,33 @@ div#main {
 			
 			.hgroup {
 				margin-bottom: 30px;
-				
-				h2,
-				p {
-					margin: 0;
-				}
-					
-				.small {
-					color: $light-grey;
-					font-size: 0.813em;
-					letter-spacing: 0.075em;
-					margin-bottom: 0px;
-					text-transform: uppercase;
-				}
+			}
+		}
+			
+		h2,
+		p {
+			margin: 0;
+		}
+
+		.small {
+			color: $light-grey;
+			font-size: 0.813em;
+			letter-spacing: 0.075em;
+			margin-bottom: 0px;
+			text-transform: uppercase;
+		}
+		
+		&:nth-child(odd) {
+			
+			figure {
+				@include shift(1);
+				float: right;
+				margin-right: 0;
+			}
+
+			aside {
+				@include shift(0);
+				float: left;
 			}
 		}
 	}
@@ -256,6 +290,10 @@ img {
 	text-decoration: line-through;
 }
 
+.hidden {
+	display: none;
+}
+
 
 
 /*****************
@@ -274,14 +312,14 @@ img {
 	text-transform: uppercase;
 	
 	a {	
-		border: 1px solid $base-colour;
+		border: 1px solid $base-colour-hover;
 		color: $base-colour;
 		display: block;
 		padding: 13px 13px 12px;
 	
 		&:hover,
 		&:focus {
-			border: 1px solid $base-colour-hover;
+			border: 1px solid $base-colour;
 		}
 	}
 }

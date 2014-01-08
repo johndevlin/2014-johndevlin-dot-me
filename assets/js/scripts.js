@@ -1,15 +1,6 @@
 
 
-/********************************
 
-	Some scripts I regularly use. 
-	-----------------------------
-	
-	It's doubtful these will be
-	used in every project, please
-	remove any unused script. 
-	
-*/
 
 // Add current year to .current-year
 var currentYear = (new Date).getFullYear();

@@ -25,32 +25,7 @@ $sitemargin: 80px;
 
 /* Typography */
 
-/* Helvetica */
-
-$proxima-nova: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, san-serif;
-
-@mixin proxima-nova-regular {
-	font-family: $proxima-nova;
-	font-weight: 400;
-}
-
-@mixin proxima-nova-bold {
-	font-family: $proxima-nova;
-	font-weight: 700;
-}
-
-@mixin proxima-nova-black {
-	font-family: $proxima-nova;
-	font-weight: 900;
-}
-
-
 /* DIN */
-
-@mixin din-light {
-	font-family: 'DIN Next W01 Light', 'Helvetica Neue', Helvetica, Arial, san-serif;
-	font-weight: normal;
-}
 
 @mixin din-regular {
 	font-family: 'DIN Next W01 Regular', 'Helvetica Neue', Helvetica, Arial, san-serif;
@@ -64,11 +39,6 @@ $proxima-nova: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, san-serif;
 
 @mixin din-bold {
 	font-family: 'DIN Next W01 Bold', 'Helvetica Neue', Helvetica, Arial, san-serif;
-	font-weight: normal;
-}
-
-@mixin din-heavy {
-	font-family: 'DIN Next W01 Heavy', 'Helvetica Neue', Helvetica, Arial, san-serif;
 	font-weight: normal;
 }
 

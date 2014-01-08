@@ -67,7 +67,7 @@ header {
 					@include transform(translateY(35px) rotateX(45deg));
 					@include transition (all 0.3s ease-in-out);
 					color: $base-colour;
-					content: 'Coming soon';
+					content: 'Not quite ready yet';
 					font-size: 0.75em;
 					margin: 0 auto;
 					opacity: 0;
@@ -92,7 +92,12 @@ header {
 				padding-bottom: 9px; 
 			}
 			
-			.active a,
+			.active a {
+				border-bottom: 1px solid $base-colour-hover;
+				color: $base-colour;
+			}
+			
+			.active a:hover,
 			a:hover {
 				border-bottom: 1px solid $base-colour;
 				color: $base-colour;
