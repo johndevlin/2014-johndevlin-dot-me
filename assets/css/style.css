@@ -518,6 +518,8 @@ div#main {
     div#main section h2,
     div#main section p {
       margin: 0; }
+    div#main section p {
+      text-align: justify; }
     div#main section .small {
       color: #aaaaaa;
       font-size: 0.813em;
@@ -675,7 +677,9 @@ img {
         div#main section aside .hgroup {
           margin-bottom: 20px; }
           div#main section aside .hgroup:first-child {
-            display: none; } }
+            display: none; }
+        div#main section aside p {
+          text-align: left; } }
 /* Mobile (Landscape) */
 @media screen and (max-width: 767px) {
   body {
