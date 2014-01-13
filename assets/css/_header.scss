@@ -1,49 +1,27 @@
 
 header {
-	padding: 40px 20px 0;
-	
-	.hgroup {
-		@include span-columns(3);
+	padding: 50px 20px 0;
 		
-		h1 {
-			@include din-black;
-			font-size: 5em;
-			letter-spacing: 0.075em;
-			line-height: 1;
-			margin: 0 0 0px;
-			text-transform: uppercase;
-		}
-		
-		h2 {
-			@include din-bold;
-			font-size: 2em;
-			letter-spacing: 0.025em;
-			line-height: 1;
-			margin: 0;
-			text-transform: uppercase;
-		}
-	}
-	
 	.shit-bio {
-		@include span-columns(4);
+		@include span-columns(5);
 		
 		p {
-			font-size: 1.375em;
-			letter-spacing: -0.025em;
+			font-size: 1.5em;
+			letter-spacing: -0.01em;
 			line-height: 1.4;
-			margin: 24px 0 -2px;
+			margin: 0;
 		}
 	}
 	
 	nav {
 		@include span-columns(8);
-		@include shift(1);
+		@include shift(3); 
 		@include clearfix;
 		
 		ul {
 			border-bottom: 1px solid #dddddd;
 			float: right;
-			margin: 78px 0 0;
+			margin: 62px 0 0;
 			padding-bottom: 10px;
 			
 			li {

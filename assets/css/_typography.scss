@@ -21,7 +21,7 @@ p a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	@include din-bold;
+	@include din-medium;
 	color: $body-colour;
 	line-height: 1.2;
 	margin: 0 0 1em;
@@ -30,14 +30,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	@include din-medium;
-	font-size: 2.25em;
+	font-size: 2em;
 	letter-spacing: -0.025em;
 	line-height: 1;
 }
 
 h2 {
-	@include din-medium;
 	font-size: 1.5em;
 	letter-spacing: -0.025em;
 }
