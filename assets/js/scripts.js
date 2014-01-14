@@ -1,5 +1,8 @@
 
 
+$('.inactive').click(function(){
+	return false;
+});
 
 
 // Add current year to .current-year

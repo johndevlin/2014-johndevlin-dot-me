@@ -562,6 +562,15 @@ img {
     .button a:hover, .button a:focus {
       border: 1px solid #ee8844; }
 
+.inactive {
+  letter-spacing: 0.1em; }
+  .inactive a {
+    border: 1px solid #cccccc;
+    color: #cccccc; }
+    .inactive a:hover, .inactive a:focus {
+      border: 1px solid #bbbbbb;
+      color: #bbbbbb; }
+
 /****************
 	Media Queries 
 */

@@ -329,6 +329,21 @@ img {
 	}
 }
 
+.inactive {
+	letter-spacing: 0.1em;
+	
+	a {
+		border: 1px solid #cccccc;
+		color: #cccccc;
+	
+		&:hover,
+		&:focus {
+			border: 1px solid #bbbbbb;
+			color: #bbbbbb;
+		}
+	}
+}
+
 
 
 	
