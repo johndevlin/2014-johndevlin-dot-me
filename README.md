@@ -1,11 +1,19 @@
 2014 John Devlin dot me
 =======================
 
+This is my portfolio site. It was last updated on January 2014. 
+
+It is currently a static portfolio site.
+
+
 
 To-dos
 ------
 
-* Grunt
+* Add a PHP contact form
+* Install WordPress
+* Add a blog
+* Add a photography feed
 
 
 Feedback
