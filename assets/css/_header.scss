@@ -45,7 +45,7 @@ header {
 					@include transform(translateY(35px) rotateX(45deg));
 					@include transition (all 0.3s ease-in-out);
 					color: $base-colour;
-					content: 'Not quite ready yet';
+					content: 'Nope, not ready yet';
 					font-size: 0.75em;
 					margin: 0 auto;
 					opacity: 0;
