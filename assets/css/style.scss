@@ -175,6 +175,25 @@ a {
 	@include outer-container;
 }
 
+.no-js .loader {
+	display: none;
+}
+
+.js {
+	
+	.loader {
+		@include position(fixed, 0px 0 0 0px);
+		background: url('/img/optimised/loader.gif') no-repeat center center;
+		height: 100%;
+		width: 100%;
+	}
+	
+	header,
+	#main,
+	footer {
+		display: none;
+	}
+}
 
 /**********
 	Header

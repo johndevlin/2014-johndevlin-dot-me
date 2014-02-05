@@ -4,6 +4,20 @@ $('.inactive').click(function(){
 	return false;
 });
 
+$(window).load(function() {
+	
+	setTimeout(function() {
+		$('.js .loader').fadeOut(500);
+	}, 100);
+	
+	setTimeout(function() {
+		$('.js header').fadeIn(800);
+		$('.js #main').fadeIn(800);
+		$('.js footer').fadeIn(800);
+	}, 1000);
+	
+});
+
 
 // Add current year to .current-year
 var currentYear = (new Date).getFullYear();
