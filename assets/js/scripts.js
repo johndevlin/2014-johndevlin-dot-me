@@ -21,12 +21,10 @@ $(window).load(function() {
 	
 });
 
-
 // Add current year to .current-year
 var currentYear = (new Date).getFullYear();
 $('.current-year').text(currentYear)
-
-
+ 
 // Do X ESC 
 $(document).keyup(function(e) {
 	
