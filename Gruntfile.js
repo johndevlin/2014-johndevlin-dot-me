@@ -5,10 +5,14 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		concat: {   
+			options: {
+				preserveComments: false,
+				separator: ';'
+			},
 			dist: {
 				src: [
-					'assets/js/libs/*.js', // All JS in the libs folder
-					'assets/js/scripts.js' // This specific file
+					'assets/js/libs/*.js',
+					'assets/js/scripts.js'
 				],
 				dest: 'assets/js/build/production.js',
 			}
@@ -53,6 +57,26 @@ module.exports = function(grunt) {
 				options: {
 					spawn: false,
 				}
+			},
+			html: {
+				files: ['*.html'],
+				tasks: ['htmlhint']
+			}
+		},
+		
+		htmlhint: {
+			build: {
+				options: {
+		            'tag-pair': true,
+		            'tagname-lowercase': true,
+		            'attr-lowercase': true,
+		            'attr-value-double-quotes': true,
+		            'doctype-first': true,
+		            'spec-char-escape': true,
+		            'id-unique': true,
+		            'style-disabled': true
+		        },
+				src: ['index.html']
 			}
 		},
 
@@ -75,9 +99,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-htmlhint');
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch', 'sass']);
+	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch', 'sass', 'htmlhint']);
 
 };
 
