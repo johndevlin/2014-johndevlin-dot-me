@@ -40,9 +40,12 @@ $(window).load(function() {
 	
 	setTimeout(function() {
 		$('.js header').fadeIn(800);
+	}, 1000);
+	
+	setTimeout(function() {
 		$('.js #main').fadeIn(800);
 		$('.js footer').fadeIn(800);
-	}, 1000);
+	}, 1600);
 	
 });
 
