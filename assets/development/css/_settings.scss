@@ -1,0 +1,41 @@
+
+/*************
+	Variables
+*/
+
+/* Colours */
+
+$white: #ffffff;
+
+$light-grey: #aaaaaa;
+$grey: #444444;
+
+$orange: #ee8844;
+
+$base-colour: $orange;
+$base-colour-hover: lighten($base-colour, 20%);
+$body-colour: $grey;
+$background-colour: $white;
+
+
+/* Margins */
+
+$sitemargin: 80px;
+
+
+/* Typography */
+
+/* DIN */
+
+@mixin din-regular {
+	font-family: 'DIN Next W01 Regular', 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-weight: normal;
+}
+
+@mixin din-medium {
+	font-family: 'DIN Next W01 Medium', 'Helvetica Neue', Helvetica, Arial, san-serif;
+	font-weight: normal;
+}
+
+
+

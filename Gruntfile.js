@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	// 1. All configuration goes here 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-
+		
 		concat: {   
 			options: {
 				preserveComments: false,
@@ -11,17 +11,17 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: [
-					'assets/js/libs/*.js',
-					'assets/js/scripts.js'
+					'assets/development/js/libs/*.js',
+					'assets/development/js/scripts.js'
 				],
-				dest: 'assets/js/build/production.js',
+				dest: 'assets/production/js/production.js',
 			}
 		},
 		
 		uglify: {
 			build: {
-				src: 'assets/js/build/production.js',
-				dest: 'assets/js/build/production.min.js'
+				src: 'assets/production/js/production.js',
+				dest: 'assets/production/js/production.min.js'
 			}
 		},
 		
@@ -29,38 +29,10 @@ module.exports = function(grunt) {
 			dynamic: {
 				files: [{
 					expand: true,
-					cwd: 'img/highres/',
+					cwd: 'assets/development/img/',
 					src: ['**/*.{png,jpg,gif}'],
-					dest: 'img/optimised/'
+					dest: 'assets/production/img/'
 				}]
-			}
-		},
-		
-		watch: {
-			scripts: {
-				files: ['assets/js/*.js'],
-				tasks: ['concat', 'uglify'],
-				options: {
-					spawn: false,
-				},
-			},
-			css: {
-				files: ['assets/css/*.scss'],
-				tasks: ['sass'],
-				options: {
-					spawn: false,
-				}
-			},
-			images: {
-				files: ['img/highres/*.{png,jpg,gif}'],
-				tasks: ['imagemin'],
-				options: {
-					spawn: false,
-				}
-			},
-			html: {
-				files: ['*.html'],
-				tasks: ['htmlhint']
 			}
 		},
 		
@@ -76,7 +48,7 @@ module.exports = function(grunt) {
 		            'id-unique': true,
 		            'style-disabled': true
 		        },
-				src: ['index.html']
+				src: ['*.html']
 			}
 		},
 
@@ -86,9 +58,40 @@ module.exports = function(grunt) {
 					style: 'compressed'
 				},
 				files: {
-					'assets/css/style.css': 'assets/css/style.scss'
+					'assets/production/css/style.css': 'assets/development/css/base.scss'
 				}
 			} 
+		},
+		
+		watch: {
+			scripts: {
+				files: ['assets/development/js/*.js'],
+				tasks: ['concat', 'uglify'],
+				options: {
+					spawn: false,
+				},
+			},
+			css: {
+				files: ['assets/development/css/*.scss'],
+				tasks: ['sass'],
+				options: {
+					spawn: false,
+				}
+			},
+			images: {
+				files: ['assets/development/img/*.{png,jpg,gif}'],
+				tasks: ['imagemin'],
+				options: {
+					spawn: false,
+				}
+			},
+			html: {
+				files: ['*.html'],
+				tasks: ['htmlhint'],
+				options: {
+					spawn: false,
+				}
+			}
 		}
 
 	});
