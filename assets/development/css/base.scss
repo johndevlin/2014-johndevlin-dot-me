@@ -190,6 +190,7 @@ a {
 	
 	header,
 	.main-content,
+	.project-wrapper,
 	footer {
 		display: none;
 	}
@@ -316,6 +317,8 @@ img {
 .hidden {
 	display: none;
 }
+
+@import "animate";
 
 
 

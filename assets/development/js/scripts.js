@@ -11,13 +11,21 @@ $(window).load(function() {
 	}, 100);
 	
 	setTimeout(function() {
-		$('.js header').fadeIn(800);
+		$('.js header').fadeIn(500);
 	}, 1000);
 	
 	setTimeout(function() {
-		$('.js .main-content').fadeIn(800);
-		$('.js footer').fadeIn(800);
-	}, 1600);
+		$('.js .main-content').fadeIn(500);
+	}, 1500);
+
+	setTimeout(function() {
+		$('.js .project-wrapper').fadeIn(500);
+		$('.js footer').fadeIn(500);
+	}, 2000);
+
+	setTimeout(function() {
+		new WOW().init(); 
+	}, 2050);
 	
 });
 
