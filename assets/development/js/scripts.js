@@ -19,6 +19,7 @@ $(window).load(function() {
 	}, 1500);
 
 	setTimeout(function() {
+		$('.js div.main-content section:first-child').addClass('fadeInDown');
 		$('.js .project-wrapper').fadeIn(500);
 		$('.js footer').fadeIn(500);
 	}, 2000);
