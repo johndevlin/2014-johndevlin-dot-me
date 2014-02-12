@@ -183,13 +183,13 @@ a {
 	
 	.loader {
 		@include position(fixed, 0px 0 0 0px);
-		background: url('/img/optimised/loader.gif') no-repeat center center;
+		background: url('/assets/production/img/loader.gif') no-repeat center center;
 		height: 100%;
 		width: 100%;
 	}
 	
 	header,
-	#main,
+	.main-content,
 	footer {
 		display: none;
 	}
@@ -207,7 +207,7 @@ a {
 	Main
 */
 
-div#main {
+div.main-content {  
 	margin-bottom: 40px;
 	padding: 60px 20px 0;
 	

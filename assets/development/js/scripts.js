@@ -15,7 +15,7 @@ $(window).load(function() {
 	}, 1000);
 	
 	setTimeout(function() {
-		$('.js #main').fadeIn(800);
+		$('.js .main-content').fadeIn(800);
 		$('.js footer').fadeIn(800);
 	}, 1600);
 	
