@@ -1,0 +1,74 @@
+
+@include media($tablet) {
+	
+	header {
+	
+		.hgroup {
+			@include span-columns(8);
+		
+			h1 {
+				font-size: 5em;
+			}
+		
+			h2 {
+				font-size: 2em;
+			}
+		}
+	
+		.shit-bio {
+			@include span-columns(8);
+		}
+	
+		nav {
+			@include span-columns(8);
+			@include shift(0);
+			@include clearfix;
+			
+			ul {
+				float: none; 
+				margin: 40px 0 0;
+			}
+		}
+	}
+	
+	div.main-content {  
+		padding-top: 40px;
+		
+		section {
+			margin-top: 20px; 
+			padding-top: 30px;
+	
+			figure {
+				@include span-columns(8);
+				margin-bottom: 20px;
+			
+				figcaption {
+					display: block;
+					margin-bottom: 20px;
+					
+					h2,
+					p {
+						margin: 0;
+					}
+				}
+			}
+
+			aside {
+				@include span-columns(8);
+				@include shift(0);
+				
+				.hgroup {
+					margin-bottom: 20px;
+					
+					&:first-child {
+						display: none;
+					}
+				}
+		
+				p {
+					text-align: left;
+				}
+			}
+		}
+	}
+}
