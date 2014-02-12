@@ -2,7 +2,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
- 
+
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
@@ -59,42 +59,42 @@ td { vertical-align: top; }
 
 	Contents
 	========
-	
+
 	1. Style.scss
 	-------------
-	This is the main CSS. It 
-	also has links to all 
+	This is the main CSS. It
+	also has links to all
 	other SCSS files (listed
 	below).
-	
-	
+
+
 	2. Settings.scss
 	----------------
-	settings.scss contains 
-	the site's SASS variables 
+	settings.scss contains
+	the site's SASS variables
 	and typography mixins.
-	
+
 
 	3. Typography.scss
 	------------------
-	The base CSS for headings, 
-	paragraphs, lists, etc all 
+	The base CSS for headings,
+	paragraphs, lists, etc all
 	lives in here.
-	
-	
+
+
 	4. Grid-Settings.scss
 	---------------------
 	The main grid settings for
 	the site using Bourbon
 	Neat.
-	
-	
+
+
 	5. Header.scss
 	--------------
 	All SCSS for the header
 	include PHP file.
-	
-	
+
+
 	6. Footer.scss
 	--------------
 	All SCSS for the footer
@@ -118,9 +118,9 @@ td { vertical-align: top; }
 /********************
 	Website Settings
 	----------------
-	Colour, and 
+	Colour, and
 	typography
-	
+
 */
 
 @import "settings";
@@ -149,7 +149,7 @@ a {
 	border-bottom: 1px solid $base-colour-hover;
 	color: $base-colour;
 	text-decoration: none;
-	
+
 	&:hover {
 		border-bottom-color: $base-colour;
 	}
@@ -180,14 +180,14 @@ a {
 }
 
 .js {
-	
+
 	.loader {
 		@include position(fixed, 0px 0 0 0px);
 		background: url('/assets/production/img/loader.gif') no-repeat center center;
 		height: 100%;
 		width: 100%;
 	}
-	
+
 	header,
 	.main-content,
 	.project-wrapper,
@@ -196,6 +196,13 @@ a {
 	}
 
 	.main-content section:first-child {
+		@include transition (all 1.75s ease-in-out);
+		@include transform(translateY(0));
+		opacity: 1;
+	}
+
+	.main-content section.risen {
+		@include transform(translateY(-50px));
 		opacity: 0;
 	}
 }
@@ -212,27 +219,27 @@ a {
 	Main
 */
 
-div.main-content {  
+div.main-content {
 	margin-bottom: 40px;
 	padding: 60px 20px 0;
-	
-	section {	
+
+	section {
 		@include outer-container;
 		border-top: 1px solid #dddddd;
 		padding-top: 40px;
 		margin-bottom: 40px;
-	
+
 		figure {
 			@include span-columns(10);
-			
+
 			figcaption {
 				display: none;
 			}
-			
+
 			img {
 				@include transition (all 0.3s ease-in-out);
 				border: 1px solid #dddddd;
-				
+
 				&:hover {
 					border-color: $base-colour;
 				}
@@ -242,17 +249,17 @@ div.main-content {
 		aside {
 			@include span-columns(5);
 			@include shift(1);
-			
+
 			.hgroup {
 				margin-bottom: 30px;
 			}
 		}
-			
+
 		h2,
 		p {
 			margin: 0;
 		}
-		
+
 		p {
 			text-align: justify;
 		}
@@ -264,9 +271,9 @@ div.main-content {
 			margin-bottom: 0px;
 			text-transform: uppercase;
 		}
-		
+
 		&:nth-child(odd) {
-			
+
 			figure {
 				@include shift(1);
 				float: right;
@@ -283,14 +290,15 @@ div.main-content {
 
 
 
+
 /**********
 	Footer
 */
 
 @import "footer";
-	
 
-	
+
+
 /*******************
 	Responsive Guff
 */
@@ -322,39 +330,24 @@ img {
 	display: none;
 }
 
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0 !important;;
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1 !important;;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
+.animated {
+	@include animation(1.75s both);
 }
 
-@keyframes fadeInDown {
-  0% {
-    opacity: 0 !important;;
-    -webkit-transform: translateY(-20px);
-    -ms-transform: translateY(-20px);
-    transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1 !important;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
+@include keyframes(fadeInWork) {
+	from {
+		opacity: 0;
+		@include transform(translateY(-50px));
+	}
+	to {
+		opacity: 1;
+		@include transform(translateY(0));
+	}
 }
 
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
+.js .fadeInWork {
+		animation-name: fadeInWork;
+-webkit-animation-name: fadeInWork;
 }
 
 
@@ -373,14 +366,14 @@ img {
 	line-height: 1;
 	text-align: center;
 	text-transform: uppercase;
-	
-	a {	
+
+	a {
 		border: 1px solid $base-colour-hover;
 		color: $base-colour;
 		display: block;
 		padding: 13px 13px 12px;
 		text-align: center;
-	
+
 		&:hover,
 		&:focus {
 			border: 1px solid $base-colour;
@@ -390,11 +383,11 @@ img {
 
 .inactive {
 	letter-spacing: 0.1em;
-	
+
 	a {
 		border: 1px solid #cccccc;
 		color: #cccccc;
-	
+
 		&:hover,
 		&:focus {
 			border: 1px solid #bbbbbb;
@@ -405,9 +398,9 @@ img {
 
 
 
-	
+
 /****************
-	Media Queries 
+	Media Queries
 */
 
 /* Landscape tablet and small desktop */
@@ -438,17 +431,17 @@ img {
 
 
 /*********
-	Print 
+	Print
 */
 
 @media print {
-* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
 a, a:visited { text-decoration: underline; }
 a[href]:after { content: " (" attr(href) ")"; }
 abbr[title]:after { content: " (" attr(title) ")"; }
-.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
 pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-thead { display: table-header-group; } 
+thead { display: table-header-group; }
 tr, img { page-break-inside: avoid; }
 img { max-width: 100% !important; }
 @page { margin: 0.5cm; }

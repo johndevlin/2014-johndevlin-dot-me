@@ -11,59 +11,60 @@ $('.inactive').click(function(){
 });
 
 $(window).load(function() {
-	
+
 	setTimeout(function() {
 		$('.js .loader').fadeOut(500);
 	}, 100);
-	
+
 	setTimeout(function() {
 		$('.js header').fadeIn(500);
 	}, 1000);
-	
+
 	setTimeout(function() {
 		$('.js .main-content').fadeIn(500);
+		$('.js .project-wrapper').fadeIn(500);
+		$('.js footer').fadeIn(500);
 	}, 1500);
 
 	setTimeout(function() {
-		$('.js div.main-content section:first-child').addClass('fadeInDown');
-		$('.js .project-wrapper').fadeIn(500);
-		$('.js footer').fadeIn(500);
+		// $('.js div.main-content section:first-child').css('opacity','1');
+		$('.js div.main-content section:first-child').removeClass('risen');
 	}, 2000);
 
 	setTimeout(function() {
-		new WOW().init(); 
+		new WOW().init();
 	}, 2050);
-	
+
 });
 
 // Add current year to .current-year
 var currentYear = (new Date).getFullYear();
 $('.current-year').text(currentYear)
- 
-// Do X ESC 
+
+// Do X ESC
 $(document).keyup(function(e) {
-	
-	if (e.keyCode == 27) { 
+
+	if (e.keyCode == 27) {
 		// Guff
 	}
-	
+
 });
 
 
-// Validation 
-function validateEmail(email) { 
+// Validation
+function validateEmail(email) {
 	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
-} 
+}
 
 function validation() {
-	
+
 	var name = $('input[name=name]').val();
 	var email = $('input[name=email]').val();
 	var message = $('textarea[name=message]').val();
-	
+
 	var err_name = 0, err_email = 0, err_message = 0;
-	
+
 	if(name == '' || name == undefined || name.length < 6){
 		err_name = 1;
 		$('.name_err').addClass('show-error');
@@ -71,7 +72,7 @@ function validation() {
 		err_name = 0;
 		$('.name_err').removeClass('show-error');
 	}
-	
+
 	if(email == '' || email == undefined || !validateEmail(email)){
 		err_email = 1;
 		$('.email_err').addClass('show-error');
@@ -79,7 +80,7 @@ function validation() {
 		err_email = 0;
 		$('.email_err').removeClass('show-error');
 	}
-	
+
 	if(message == '' || message == undefined || message.length < 6){
 		err_message = 1;
 		$('.message_err').addClass('show-error');
@@ -87,11 +88,11 @@ function validation() {
 		err_message = 0;
 		$('.message_err').removeClass('show-error');
 	}
-	
+
 	if(err_name == 0 && err_email == 0 && err_message == 0){
 		return true;
 	}
-	
+
 	return false;
 }
 
