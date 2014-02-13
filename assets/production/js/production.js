@@ -386,7 +386,7 @@ $(window).load(function() {
 
 	setTimeout(function() {
 		window.scrollReveal = new scrollReveal();
-	}, 1601);
+	}, 1605);
 
 });
 
