@@ -384,6 +384,10 @@ $(window).load(function() {
 		$('.js footer').fadeIn(500);
 	}, 1600);
 
+	setTimeout(function() {
+		window.scrollReveal = new scrollReveal();
+	}, 1601);
+
 });
 
 // Add current year to .current-year
