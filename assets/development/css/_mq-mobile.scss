@@ -1,10 +1,10 @@
 
 @include media($mobile) {
-	
+
 	body {
 		-webkit-text-size-adjust: none;
 	}
-	
+
 	.mobile {
 		display: block;
 	}
@@ -12,24 +12,24 @@
 	.desktop {
 		display: none;
 	}
-	
-	header { 
+
+	header {
 		padding-top: 20px;
-		
+
 		.hgroup {
 			margin-bottom: 10px;
 		}
-		
+
 		.shit-bio p {
 			margin-top: 0;
 		}
-		
+
 		nav {
-			
+
 			ul {
-				border-bottom: 1px solid #dddddd;
-				margin: 20px 0;
-				
+				border-bottom: none;
+				margin: 20px 0 0;
+
 				li {
 					display: block;
 					font-size: 1.125em;
@@ -39,7 +39,7 @@
 				.blank-writing,
 				.blank-photography {
 					display: none;
-					
+
 					&:after {
 						display: none;
 					}
@@ -47,24 +47,24 @@
 
 				a {
 					border-bottom: 1px solid transparent;
-					padding-bottom: 0px; 
+					padding-bottom: 0px;
 				}
 			}
 		}
 	}
-	
-	div.main-content {  
+
+	div.main-content {
 		margin-bottom: 40px;
-		padding: 40px 20px 0;
-		
+		padding: 20px 20px 0;
+
 		h1 {
 			margin-bottom: 15px;
 		}
-	
+
 		section {
 			padding-top: 20px;
 			margin-bottom: 20px;
-	
+
 		}
 	}
 }
