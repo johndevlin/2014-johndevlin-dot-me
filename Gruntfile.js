@@ -1,10 +1,10 @@
 module.exports = function(grunt) {
 
-	// 1. All configuration goes here 
+	// 1. All configuration goes here
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		
-		concat: {   
+
+		concat: {
 			options: {
 				preserveComments: false,
 				separator: ';'
@@ -17,14 +17,14 @@ module.exports = function(grunt) {
 				dest: 'assets/production/js/production.js',
 			}
 		},
-		
+
 		uglify: {
 			build: {
 				src: 'assets/production/js/production.js',
 				dest: 'assets/production/js/production.min.js'
 			}
 		},
-		
+
 		imagemin: {
 			dynamic: {
 				files: [{
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
-		
+
 		htmlhint: {
 			build: {
 				options: {
@@ -60,9 +60,9 @@ module.exports = function(grunt) {
 				files: {
 					'assets/production/css/style.css': 'assets/development/css/base.scss'
 				}
-			} 
+			}
 		},
-		
+
 		watch: {
 			scripts: {
 				files: ['assets/development/js/*.js'],
@@ -84,13 +84,6 @@ module.exports = function(grunt) {
 				options: {
 					spawn: false,
 				}
-			},
-			html: {
-				files: ['*.html'],
-				tasks: ['htmlhint'],
-				options: {
-					spawn: false,
-				}
 			}
 		}
 
@@ -105,7 +98,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-htmlhint');
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch', 'sass', 'htmlhint']);
+	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch', 'sass']);
 
 };
 
