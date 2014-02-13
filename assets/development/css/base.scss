@@ -190,20 +190,8 @@ a {
 
 	header,
 	.main-content,
-	.project-wrapper,
 	footer {
 		display: none;
-	}
-
-	.main-content section:first-child {
-		@include transition (all 1.75s ease-in-out);
-		@include transform(translateY(0));
-		opacity: 1;
-	}
-
-	.main-content section.risen {
-		@include transform(translateY(-50px));
-		opacity: 0;
 	}
 }
 
@@ -290,7 +278,6 @@ div.main-content {
 
 
 
-
 /**********
 	Footer
 */
@@ -328,26 +315,6 @@ img {
 
 .hidden {
 	display: none;
-}
-
-.animated {
-	@include animation(1.75s both);
-}
-
-@include keyframes(fadeInWork) {
-	from {
-		opacity: 0;
-		@include transform(translateY(-50px));
-	}
-	to {
-		opacity: 1;
-		@include transform(translateY(0));
-	}
-}
-
-.js .fadeInWork {
-		animation-name: fadeInWork;
--webkit-animation-name: fadeInWork;
 }
 
 

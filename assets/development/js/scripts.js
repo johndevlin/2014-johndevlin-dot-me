@@ -12,22 +12,12 @@ $(window).load(function() {
 
 	setTimeout(function() {
 		$('.js header').fadeIn(500);
-	}, 1000);
+	}, 1100);
 
 	setTimeout(function() {
 		$('.js .main-content').fadeIn(500);
-		$('.js .project-wrapper').fadeIn(500);
 		$('.js footer').fadeIn(500);
-	}, 1500);
-
-	setTimeout(function() {
-		// $('.js div.main-content section:first-child').css('opacity','1');
-		$('.js div.main-content section:first-child').removeClass('risen');
-	}, 2000);
-
-	setTimeout(function() {
-		new WOW().init();
-	}, 2050);
+	}, 1600);
 
 });
 
