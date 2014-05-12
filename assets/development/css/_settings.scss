@@ -5,37 +5,60 @@
 
 /* Colours */
 
-$white: #ffffff;
+$white: #ffffff; 
+$light-grey: #777777;
+$grey: #333333;
 
-$light-grey: #aaaaaa;
-$grey: #444444;
+$red: #dd4433;
 
-$orange: #ee8844;
-
-$base-colour: $orange;
-$base-colour-hover: lighten($base-colour, 20%);
-$body-colour: $grey;
+$base-colour: $red;
+$body-colour: $light-grey;
+$heading-colour: $grey;
 $background-colour: $white;
 
 
+ 
 /* Margins */
 
-$sitemargin: 80px;
+$site-margin: 30px;
 
 
-/* Typography */
 
-/* DIN */
+/* Typography - Typefaces */
+ 
 
-@mixin din-regular {
-	font-family: 'DIN Next W01 Regular', 'Helvetica Neue', Helvetica, Arial, san-serif;
-	font-weight: normal;
+/* Lato */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+$lato: 'Lato', 'Helvetica Neue', Helvetica, Arial, san-serif;
+
+@mixin lato-light {
+	font-family: $lato;
+	font-weight: 300;
 }
 
-@mixin din-medium {
-	font-family: 'DIN Next W01 Medium', 'Helvetica Neue', Helvetica, Arial, san-serif;
-	font-weight: normal;
+@mixin lato-regular {
+	font-family: $lato;
+	font-weight: 400;
+}
+
+@mixin lato-bold {
+	font-family: $lato;
+	font-weight: 700;
 }
 
 
+/* Typography - SASS selectors */
 
+@mixin base-font {
+	@include lato-regular;
+}
+
+@mixin light-heading-font {
+	@include lato-light;
+}
+
+@mixin heading-font {
+	@include lato-bold;
+}
