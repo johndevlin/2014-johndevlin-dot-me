@@ -219,11 +219,6 @@ div.main-content {
 
 		figure {
 			@include span-columns(10);
-
-			figcaption {
-				display: none;
-			}
-
 			img {
 				@include transition (all 0.3s ease-in-out);
 				border: 1px solid #dddddd;
