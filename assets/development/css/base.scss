@@ -244,7 +244,12 @@ div.main-content {
 		}
 
 		p {
+			margin: 0 0 1em;
 			text-align: justify;
+			
+			&:last-child {
+				margin: 0;
+			}
 		}
 
 		.small {
