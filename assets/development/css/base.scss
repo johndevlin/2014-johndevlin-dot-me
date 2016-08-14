@@ -227,6 +227,9 @@ div.main-content {
 					border-color: $base-colour;
 				}
 			}
+			figcaption {
+				display: none;
+			}
 		}
 
 		aside {
